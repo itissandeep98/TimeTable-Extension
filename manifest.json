@@ -1,12 +1,8 @@
 {
-	"name": "Getting Started Example",
-
-	"description": "Build an Extension!",
-
-	"version": "1.0",
-
+	"name": "Time Table Manager",
+	"description": "Time Table Manager",
+	"version": "0.0.1",
 	"manifest_version": 3,
-
 	"background": {
 		"service_worker": "background.js"
 	},
@@ -16,5 +12,12 @@
 	},
 	"icons": {
 		"16": "/images/logo.png"
-	}
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://timetable.cf/*"],
+			"run_at": "document_idle",
+			"js": ["content.js"]
+		}
+	]
 }
